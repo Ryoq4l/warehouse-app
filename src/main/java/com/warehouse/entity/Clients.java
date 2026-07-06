@@ -1,46 +1,39 @@
 package com.warehouse.entity;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
-@Table (name = "clients")
-public class Clients implements Serializable{
+@Table(name = "clients")
+public class Clients {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "clientid")
-    private long clientId;
+    @Column(name = "clientid")
+    private Integer clientId;
 
-    @Column (name = "clientname", nullable = false, length = 50)
-    private String clientname;
+    @Column(name = "clientname")
+    private String clientName;
 
-    @Column (name = "type", nullable = false)
-    private short type;
+    @Column(name = "type")
+    private Integer type;
 
-    public Clients () {
-
+    // Геттеры и сеттеры
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
     }
 
-    public Clients (long clientId, String clientname, short type) {
-        this.clientId = clientId;
-        this.clientname = clientname;
+    public void setType(Integer type) {
         this.type = type;
     }
 
-    public long getClientId () {
+    public Integer getClientId() {
         return clientId;
     }
-    public String getClientname() {
-        return clientname;
-    }
-    public short getType() {
-        return type;
-    }
-    public void setClientname(String clientname) {
-        this.clientname = clientname;
-    }
-    public void setType(short type) {
-        this.type = type;
+
+    public String getClientName() {
+        return clientName;
     }
 
+    public Integer getType() {
+        return type;
+    }
 }

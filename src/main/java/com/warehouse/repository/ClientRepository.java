@@ -7,5 +7,6 @@ import java.util.List;
 
 @Repository
 public interface ClientRepository extends JpaRepository<Clients, Integer> {
+    List<Clients> findByType(Integer type);
 
 }
