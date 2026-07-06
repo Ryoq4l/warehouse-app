@@ -23,23 +23,23 @@ class ClientsRepositoryTest {
     private ClientRepository clientsRepository;
 
     @Autowired
-    private SpecificationsRepository specificationsRepository;  // ← ДОБАВИТЬ!
+    private SpecificationsRepository specificationsRepository;
 
     @Autowired
-    private TtnRepository ttnRepository;  // ← ДОБАВИТЬ!
+    private TtnRepository ttnRepository;
 
     @Autowired
     private TestEntityManager entityManager;
 
     @BeforeEach
-    void cleanUp() {  // ← ВЕСЬ КОД ВНУТРИ МЕТОДА!
-        // 1. Сначала спецификации (ссылаются на ttns)
+    void cleanUp() {
+
         specificationsRepository.deleteAll();
 
-        // 2. Потом накладные (ссылаются на clients)
+
         ttnRepository.deleteAll();
 
-        // 3. Потом клиентов
+
         clientsRepository.deleteAll();
     }
 
