@@ -1,0 +1,19 @@
+
+target/
+*.class
+out/
+
+.idea/
+*.iml
+*.iws
+*.ipr
+.settings/
+.project
+.classpath
+
+# Логи
+*.log
+
+
+.DS_Store
+Thumbs.db
